@@ -38,6 +38,25 @@ set wildmenu " Show file options above the command line
 set wildmode=list:longest,full
 
 
+
+"
+" .---------------.
+" | Auto Commands |
+" '---------------'
+"
+if !exists("autocmds_loaded")
+  let autocmds_loaded = 1
+  augroup CLikeFileTypes
+    au!
+    au BufRead *.c     set cindent
+    au BufRead *.cpp   set cindent
+  augroup END
+  augroup vimrcFileType
+    au!
+    au FileType vim set tabstop=2 shiftwidth=2 softtabstop=2
+  augroup END
+endif
+
 " .--------------.
 " | Line Numbers |"
 " '--------------'
