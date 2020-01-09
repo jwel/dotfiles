@@ -69,8 +69,6 @@ set rnu                             " set relativenumber
 " '--------------'
 "
 set background=dark
-" colorscheme darkblue
-
 
 "
 " ,-.----.                                                                             
@@ -106,6 +104,10 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/seoul256.vim'
+
+    " elm lang
+    Plug 'andys8/vim-elm-syntax'
 call plug#end()
 
 
@@ -200,3 +202,8 @@ nnoremap <silent> <leader>n :NERDTreeFind<CR>
 nnoremap <silent> <leader>N :NERDTreeToggle<CR>
 " }}}
 
+" seoul256 (dark):
+"   Range:   233 (darkest) ~ 239 (lightest)
+"   Default: 237
+let g:seoul256_background = 234
+colo seoul256
